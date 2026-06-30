@@ -1,5 +1,7 @@
 # Retro Arcade Leaderboard
 
+## AHMED AYACHI & Youcef BOUHZAM
+
 ## Démarrage rapide
 
 Copiez le fichier d'environnement :
@@ -81,3 +83,4 @@ Captures d'écran dans `images/`.
 **Grafana** — login `admin` / mot de passe dans `.env` (`GRAFANA_ADMIN_PASSWORD`)
 
 Le dashboard est provisionné automatiquement au démarrage. Il affiche le trafic HTTP, la latence (p95), le taux d'erreur et les tentatives de triche (scores rejetés par motif).
+

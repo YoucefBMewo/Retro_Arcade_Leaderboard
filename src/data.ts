@@ -1,4 +1,4 @@
-type SUPPORTED_GAME = "pacman"|"tetris"|"snake"|"breakout"|"donkeykong";
+export type SUPPORTED_GAME = "pacman"|"tetris"|"snake"|"breakout"|"donkeykong";
 
 export const max_scores: Record<SUPPORTED_GAME, number> = {
     "pacman":   999999,

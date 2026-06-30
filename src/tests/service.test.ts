@@ -1,4 +1,4 @@
-import { validateScore, isCooldownBlocked, sortLeaderboard } from "../src/service";
+import { validateScore, isCooldownBlocked, sortLeaderboard } from "../service";
 
 // ── validateScore ─────────────────────────────────────────────────────────
 

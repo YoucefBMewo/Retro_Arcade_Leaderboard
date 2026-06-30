@@ -1,5 +1,5 @@
-import { max_scores } from "./data";
-import type { SUPPORTED_GAME } from "./data";
+import { max_scores } from "./data.js";
+import type { SUPPORTED_GAME } from "./data.js";
 
 export type RejectReason = "unknown_game" | "negative_score" | "score_too_high" | "cooldown";
 

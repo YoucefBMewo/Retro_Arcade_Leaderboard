@@ -3,11 +3,38 @@ services:
     build:
       context: .
       dockerfile: dockerfile
+    container_name: leaderboard_server
     ports:
       - "8000:8000"
     volumes:
       - ./:/app:Z
       - server_node_modules:/app/node_modules:Z
 
+  redis:
+    image: redis:latest
+    container_name: leaderboard_redis
+    environment:
+      - REDIS_ARGS=--requirepass ${REDIS_PASSWORD} --appendonly yes
+
+  db:
+    image: postgres:18.4-alpine3.23
+    ports:
+      - "${DB_PORT}:5432"
+    environment:
+       - POSTGRES_PASSWORD=${DB_PASSWORD}
+       - POSTGRES_USER=${DB_USER}
+       - POSTGRES_DB=${DB_NAME}
+    container_name: leaderboard_db
+    # a small test to see if the container has started successfully
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      retries: 5
+    networks:
+      - db_network
+    volumes:
+      - db_config_volume:/var/lib/postgresql
+
 volumes:
   server_node_modules:
+  db_config_volume:

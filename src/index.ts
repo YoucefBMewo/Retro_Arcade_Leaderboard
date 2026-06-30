@@ -3,8 +3,8 @@ import type { Request, Response, NextFunction } from "express";
 import { Pool } from "pg";
 import Redis from "ioredis";
 import "dotenv/config";
-import { max_scores, type SUPPORTED_GAME } from "./data";
-import { validateScore, isCooldownBlocked } from "./service";
+import { max_scores, type SUPPORTED_GAME } from "./data.js";
+import { validateScore, isCooldownBlocked } from "./service.js";
 
 // ── PostgreSQL ──────────────────────────────────────────────────────────────
 const pool = new Pool({
